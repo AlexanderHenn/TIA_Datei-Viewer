@@ -1,0 +1,30 @@
+﻿<Window x:Class="TIA_Datei_Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TIA_Datei_Viewer"
+        mc:Ignorable="d"
+        Title="TIA Datei-Viewer" Height="450" Width="800">
+    <Grid x:Name="grid">
+
+        <Button x:Name="OpenFile" HorizontalAlignment="Left" Margin="10" Width="40"  VerticalAlignment="Bottom" Click="OpenFile_Click">
+            <Image Source="icons/FileOpen.png"></Image>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="60,10" Width="40"  VerticalAlignment="Bottom">
+            <Image Source="icons/Settings.png"></Image>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="110,10" Width="40"  VerticalAlignment="Bottom">
+            <Image Source="icons/Compare.png"></Image>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="160,10" Width="40"  VerticalAlignment="Bottom">
+            <Image Source="icons/CsvExport.png"></Image>
+        </Button>
+        <ListBox x:Name="NodeList" VerticalAlignment="Top"  Margin="10,130,137,69">
+            <ListBoxItem Content="test"/>
+            <ListBoxItem Content="ListBoxItem"/>
+        </ListBox>
+        
+
+    </Grid>
+</Window>
