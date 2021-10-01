@@ -1,4 +1,9 @@
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\TIA Datei-Viewer.exe
+C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\xml\schema.xsd
+C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\xml\Test1.tia
+C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\xml\Test2.tia
+C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\xml\Test3.tia
+C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\xml\Test4_invalid.tia
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\TIA Datei-Viewer.deps.json
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\TIA Datei-Viewer.runtimeconfig.json
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\bin\Debug\netcoreapp3.1\TIA Datei-Viewer.runtimeconfig.dev.json
@@ -10,8 +15,6 @@ C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netc
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer_MarkupCompile.lref
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.g.resources
-C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA_Datei_Viewer.Resource1.resources
-C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.csproj.GenerateResource.cache
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.AssemblyInfoInputs.cache
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.AssemblyInfo.cs
@@ -19,3 +22,4 @@ C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netc
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.dll
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.pdb
 C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.genruntimeconfig.cache
+C:\Users\nyrknaqre\source\repos\TIA Datei-Viewer\TIA Datei-Viewer\obj\Debug\netcoreapp3.1\TIA Datei-Viewer.csproj.AssemblyReference.cache

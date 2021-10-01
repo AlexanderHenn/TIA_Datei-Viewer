@@ -1,18 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO;
+using System.Xml.Schema;
 using Microsoft.Win32;
 
 namespace TIA_Datei_Viewer
@@ -22,8 +12,7 @@ namespace TIA_Datei_Viewer
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        TiaFile tiaFile;
+        private TiaFile tiaFile;
 
         public MainWindow()
         {
@@ -32,36 +21,62 @@ namespace TIA_Datei_Viewer
 
         private void OpenFile_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "TIA (*.tia)|*.tia|All files (*.*)|*.*";
+            //delete UI elements for old file
+            NodeList.Items.Clear();
+            TypeButtons.Children.Clear();
+            //open new file
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "TIA (*.tia)|*.tia|All files (*.*)|*.*"
+            };
+
             if (openFileDialog.ShowDialog() == true)
             {
+                // create tiaFile and Validate
                 tiaFile = new TiaFile(openFileDialog.FileName);
-                this.Title = "TIA Selection Tool - Datei Viewer - \"" + openFileDialog.SafeFileName + "\"";
-            }
 
-
-            List<string> types = tiaFile.TypeButtonNames();
-            
-            //create Buttons with the names on them
-            //TODO arrange buttons better (as it currently is, pretty terrible)
-            int i = 10;
-            int j = 0;
-            foreach (string type in types) {
-                //RadioButton would have made sense in terms of functionality, but making them look like normal Buttons seems hard
-                Button button = new Button()
+                if (!tiaFile.Validate())
                 {
-                    Content = type,
-                    Margin = new Thickness(i, 10, 0, 0),
+                    MessageBox.Show("Could not load TIA file. Detailed Error: " + tiaFile.ValidationMessage);
+                    return;
+                }
+                else
+                {
+                    // we have a valid tiaFile now
+                    // create UI (possibly should be a separate function)
 
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Tag = j++
-                };
-                button.Click += new RoutedEventHandler(TypeName_Click);
+                    this.Title = "TIA Selection Tool - Datei Viewer - \"" + openFileDialog.SafeFileName + "\"";
+                    //create new Buttons with the Type names on them
+                    List<string> types = tiaFile.LoadTypes();
+                    int i = 0;
+                    foreach (string type in types)
+                    {
+                        Button button = new Button()
+                        {
+                            Content = type,
+                            Margin = new Thickness(10),
+                            Padding = new Thickness(10, 0, 10, 0),
+                            Tag = i++
+                        };
+                        button.Click += new RoutedEventHandler(TypeName_Click);
+                        TypeButtons.Children.Add(button);
+                    }
+                }
+            }
+        }
 
-                this.grid.Children.Add(button);
-                i = i + type.Length *8;
+        void ValidationHandler(object sender, ValidationEventArgs e)
+        {
+            if (e.Severity == XmlSeverityType.Warning)
+            {
+                MessageBox.Show
+                    ("The following validation warning occurred: " + e.Message);
+            }
+            else if (e.Severity == XmlSeverityType.Error)
+            {
+                MessageBox.Show
+                    ("The following critical validation errors occurred: " + e.Message);
+                Type objectType = sender.GetType();
             }
         }
 
@@ -74,7 +89,7 @@ namespace TIA_Datei_Viewer
             int type = (int) ((Button)sender).Tag;
 
             //get nodes and fill the list with them
-            List<string> nodes = tiaFile.NodesOfType(type);
+            List<string> nodes = tiaFile.LoadType(type);
             foreach (string node in nodes)
             {
                 NodeList.Items.Add(node);
